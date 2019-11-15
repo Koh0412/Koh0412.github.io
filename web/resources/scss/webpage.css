@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+  padding: 8px 16px;
+}
+
+.title {
+  margin: 0;
+}
