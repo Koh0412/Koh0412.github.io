@@ -3,4 +3,4 @@
 - voice test page
 
 # Usage
-If you want to see my page, give url a folder name.
+If you want to see my page, give [this](http://Koh0412.github.io) url a folder name.
