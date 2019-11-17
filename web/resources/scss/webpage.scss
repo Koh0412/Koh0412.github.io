@@ -1,17 +1,23 @@
-$twitter-color: #55acee;
+/* variable */
 $github-color: #353535;
 $qiita-color: #55c500;
+$twitter-color: #55acee;
+$header-color: #22ec73;
 
+/* tag */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #eee;
+  background-image: url('../img/antique-grain.jpg');
+  color: #333;
 }
 
 header {
   position: sticky;
   top: 0;
 }
+
+/* shared */
 
 .header-nav, .main-container, .footer {
   text-align: center;
@@ -21,7 +27,7 @@ header {
 
 .header-nav {
   padding: 10px;
-  background: #21debb;
+  background: $header-color;
   opacity: 0.9;
   box-shadow: 0px 3px 3px 0px rgba(0,0,0,.2);
   a {
@@ -36,13 +42,16 @@ header {
 /* main */
 .main-container {
   padding: 12px 16px;
-  background: white;
-  margin: 10px;
+  background: #fefffb;
+  margin: 18px;
   border-radius: 5px;
+  box-shadow: 0px 0px 5px 2px rgba(0,0,0,.3);
 }
 
-.title {
-  margin: 0;
+.my-image {
+  margin: 8px;
+  background: #d3f9ff;
+  border-radius: 100%;;
 }
 
 .social {
@@ -52,11 +61,11 @@ header {
   }
 }
 
-// fontawesome
-
-.fa-twitter {
-  color: $twitter-color;
+.title {
+  margin: 0;
 }
+
+// fontawesome
 
 .fa-github {
   color: $github-color;
@@ -65,6 +74,10 @@ header {
 .fa-search {
   background: $qiita-color;
   color: white;
+}
+
+.fa-twitter {
+  color: $twitter-color;
 }
 
 /* footer */
