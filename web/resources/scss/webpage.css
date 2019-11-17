@@ -1,20 +1,73 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #eee;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.header-nav, .main-container, .footer {
+  text-align: center;
 }
 
 /* header */
 .header-nav {
-  padding: 12px;
-  text-align: center;
+  padding: 10px;
+  background: #21debb;
+  opacity: 0.9;
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.header-nav a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: lighter;
 }
 
 /* main */
 .main-container {
-  padding: 8px 16px;
+  padding: 12px 16px;
+  background: white;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .title {
   margin: 0;
+}
+
+.social a {
+  padding: 0 8px;
+  display: inline-block;
+}
+
+.fa-twitter {
+  color: #55acee;
+}
+
+.fa-github {
+  color: #353535;
+}
+
+.fa-search {
+  background: #55c500;
+  color: white;
+}
+
+/* footer */
+.footer {
+  padding: 10px;
+  background: #2a2f35;
+}
+
+.footer small {
+  color: white;
 }
 /*# sourceMappingURL=webpage.css.map */
