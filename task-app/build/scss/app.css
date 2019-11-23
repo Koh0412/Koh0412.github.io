@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  background: #e4e8ec;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: #24252b;
+  padding: 12px;
+  -webkit-box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.header a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.setting {
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.main {
+  padding: 16px 12px;
+  text-align: center;
+}
+
+.todos {
+  padding: 8px 0;
+}
+
+.todos li {
+  list-style: none;
+  padding: 8px;
+  color: #24252b;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 8px 0;
+  background: #f4f6f7;
+}
+
+.delete {
+  cursor: pointer;
+  color: #24252b;
+}
+
+.add input {
+  background: #f6f8fa;
+  border: 1px solid lightgray;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: 1rem;
+  -webkit-box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+          box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+}
+
+.add .ripple-element:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.ripple-element {
+  overflow: hidden;
+  position: relative;
+}
+
+.ripple-effect {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 100%;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.taskbar {
+  background: #3f3846;
+  color: #eee;
+  padding: 8px;
+}
+
+.is-show-green {
+  -webkit-animation: ripple .7s ease-out;
+          animation: ripple .7s ease-out;
+  background: lightgreen;
+}
+
+@-webkit-keyframes ripple {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    -ms-transform: scale(2);
+  }
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    -ms-transform: scale(2);
+  }
+}
+/*# sourceMappingURL=app.css.map */

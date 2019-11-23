@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>TaskApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#24252b">
+    <!-- Font Awesome https://fontawesome.com/start -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Bootstrap https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../build/scss/app.css">
+    <script src="../build/src/app.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="d-flex justify-content-between align-items-center">
+        <a href="/">Todo List</a>
+        <i class="fas fa-ellipsis-v setting" id="setting"></i>
+      </nav>
+    </header>
+    <div class="taskbar">
+      タスク数: <span id="task-count"></span>
+    </div>
+    <div>
+      <div class="main col-md-8">
+        <form class="add text-center my-4" id="form">
+          <label>タスクの追加</label>
+          <input type="text" name="add" placeholder="New Text" class="form-control" id="task-add" autocomplete="off" required>
+          <div class="d-flex align-items-baseline py-2">
+            <span class="pr-2">優先度</span>
+            <div>
+              <label for="priority-low">低</label>
+              <input type="radio" name="priority" id="priority-low">
+            </div>
+            <div>
+              <label for="priority-medium">中</label>
+              <input type="radio" name="priority" id="priority-medium" checked>
+            </div>
+            <div>
+              <label for="priority-high">高</label>
+              <input type="radio" name="priority" id="priority-high">
+            </div>
+            <button type="submit" class="btn btn-success ripple-element ml-2" id="task-btn">
+              add
+              <span class="ripple-effect"></span>
+            </button>
+          </div>
+        </form>
+        <div>タスクリスト</div>
+        <ul class="list-group todos" id="tasks"></ul>
+      </div>
+    </div>
+  </body>
+</html>
