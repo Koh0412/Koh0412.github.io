@@ -31,8 +31,8 @@ export default class StorageFunc {
     if (value.classList.contains('delete')) {
       parent.parentElement!.remove();
       const task = (parent.textContent as string).trim();
-      console.log(task);
       localStorage.removeItem(task);
+
       if(localStorage.length === 0) {
         idAttr.tasks.innerHTML = noArgHtmls.taskContentMsg;
       }

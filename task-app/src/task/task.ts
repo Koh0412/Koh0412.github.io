@@ -76,13 +76,13 @@ class Task {
     const high = this.components.convertInput(idAttr.high);
 
     if(low.checked) {
-      return '<span>優先度: 低</span>';
+      return noArgHtmls.priorityMsg.low;
     }
     if (medium.checked) {
-      return '<span>優先度: 中</span>';
+      return noArgHtmls.priorityMsg.medium;
     }
     if (high.checked) {
-      return '<span>優先度: 高</span>';
+      return noArgHtmls.priorityMsg.high;
     }
     return '';
   }

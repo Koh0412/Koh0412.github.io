@@ -15,4 +15,9 @@ export const querySelector = {
 
 export const noArgHtmls = {
   taskContentMsg: '<div class="alert alert-info">現在タスクはありません</div>',
+  priorityMsg: {
+    low: '<span>優先度: 低</span>',
+    medium: '<span>優先度: 中</span>',
+    high: '<span>優先度: 高</span>',
+  }
 }
