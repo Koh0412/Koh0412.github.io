@@ -2,6 +2,10 @@ $back-color: #e4e8ec;
 $dark-blackBlue: #24252b;
 $taskbar-color: #3f3846;
 
+$priority-low-color: #d1e6f3;
+$priority-medium-color: #f4f6f7;
+$priority-high-color: #f3e6c8;
+
 $disable-radio: #f4f4f4;
 $radio: #3197EE;
 
@@ -39,6 +43,8 @@ body {
   text-align: center;
 }
 
+// task
+
 .todos {
   padding: 8px 0;
   li {
@@ -48,7 +54,20 @@ body {
     border: 1px solid lightgray;
     border-radius: 5px;
     margin: 8px 0;
-    background: #f4f6f7;
+  }
+
+  .priority-low {
+    background: $priority-low-color;
+    border: 1px solid #a0c3ce;
+  }
+
+  .priority-medium {
+    background: $priority-medium-color;
+  }
+
+  .priority-high {
+    background: $priority-high-color;
+    border: 1px solid #d2c196;
   }
 }
 
@@ -69,21 +88,6 @@ body {
   .ripple-element:focus {
     box-shadow: none;
   }
-}
-
-.ripple-element {
-  overflow: hidden;
-  position: relative;
-}
-
-.ripple-effect {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  border-radius: 100%;
-  pointer-events: none;
-  opacity: 0;
-  transform: scale(0);
 }
 
 .taskbar {
@@ -153,6 +157,21 @@ body {
 }
 
 // animation
+
+.ripple-element {
+  overflow: hidden;
+  position: relative;
+}
+
+.ripple-effect {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0);
+}
 
 .is-show-green {
   animation: ripple .7s ease-out;

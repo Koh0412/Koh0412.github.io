@@ -1,7 +1,7 @@
 import { UseText } from '../utils/use_text';
 import {
   idAttr,
-  noArgHtmls,
+  messages,
 } from '../utils/html_related';
 
 export default class StorageFunc {
@@ -14,7 +14,7 @@ export default class StorageFunc {
       localStorage.clear();
       this.count();
 
-      idAttr.tasks.innerHTML = noArgHtmls.taskContentMsg;
+      idAttr.tasks.innerHTML = messages.noTask;
     } else {
       return;
     }
@@ -34,7 +34,7 @@ export default class StorageFunc {
       localStorage.removeItem(task);
 
       if(localStorage.length === 0) {
-        idAttr.tasks.innerHTML = noArgHtmls.taskContentMsg;
+        idAttr.tasks.innerHTML = messages.noTask;
       }
     }
     this.count();

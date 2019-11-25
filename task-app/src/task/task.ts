@@ -1,7 +1,7 @@
 import {
   idAttr,
   querySelector,
-  noArgHtmls,
+  messages,
 } from '../utils/html_related';
 import UIComponents from '../components/UI/UIComponents';
 import StorageFunc from './storage';
@@ -10,10 +10,12 @@ class Task {
 
   private storage: StorageFunc;
   private components: UIComponents;
+  private priorityArray: Array<number>;
 
   constructor() {
     this.storage = new StorageFunc();
     this.components = new UIComponents();
+    this.priorityArray = [];
   }
 
   app() {
@@ -30,7 +32,7 @@ class Task {
     window.onload = () => {
       this.getItemListIn(idAttr.tasks);
       if(localStorage.length === 0) {
-        idAttr.tasks.innerHTML = noArgHtmls.taskContentMsg;
+        idAttr.tasks.innerHTML = messages.noTask;
       }
     }
 
@@ -54,6 +56,7 @@ class Task {
         idAttr.tasks.innerHTML = '';
       }
       const html = this.taskTemplate(task);
+
       this.storage.save(task, html);
       this.clearInForm(task);
       this.storage.count();
@@ -65,26 +68,44 @@ class Task {
       const html: string | null = localStorage.getItem(key);
       if (html) {
         tasks.innerHTML += localStorage.getItem(key);
+        console.log(html);
       }
     }
     this.storage.count();
   }
 
-  getPriority(): string {
+  priority(): number {
     const low = this.components.convertInput(idAttr.low);
     const medium = this.components.convertInput(idAttr.medium);
     const high = this.components.convertInput(idAttr.high);
 
-    if(low.checked) {
-      return noArgHtmls.priorityMsg.low;
+    if (low.checked) {
+      return Number(low.value);
     }
     if (medium.checked) {
-      return noArgHtmls.priorityMsg.medium;
+      return Number(medium.value);
     }
     if (high.checked) {
-      return noArgHtmls.priorityMsg.high;
+      return Number(high.value);
     }
-    return '';
+    return 0;
+  }
+
+  getPriorityStr(priorityNumber: number): string {
+    switch (priorityNumber) {
+      case 1:
+        return messages.priority.low;
+        break;
+      case 2:
+        return messages.priority.medium;
+        break;
+      case 3:
+        return messages.priority.high;
+        break;
+      default:
+        return '';
+        break;
+    }
   }
 
   registeredValue(): string {
@@ -93,14 +114,17 @@ class Task {
   }
 
   taskTemplate(inputValue: string): string {
+    const priority: string = this.getPriorityStr(this.priority());
+    const priorityClass: string = this.components.cardColorClassName(this.priority());
+
     const template: string = `
-    <li>
-      <div>
+    <li class="${priorityClass}">
+      <div class="task-title">
         ${inputValue}
         <i class="far fa-trash-alt delete"></i>
       </div>
-      <div>
-        ${this.getPriority()}
+      <div class="task-property">
+        ${priority}
       </div>
     </li>`;
     return template;

@@ -39,7 +39,20 @@ body {
   border: 1px solid lightgray;
   border-radius: 5px;
   margin: 8px 0;
+}
+
+.todos .priority-low {
+  background: #d1e6f3;
+  border: 1px solid #a0c3ce;
+}
+
+.todos .priority-medium {
   background: #f4f6f7;
+}
+
+.todos .priority-high {
+  background: #f3e6c8;
+  border: 1px solid #d2c196;
 }
 
 .delete {
@@ -60,22 +73,6 @@ body {
 .add .ripple-element:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-.ripple-element {
-  overflow: hidden;
-  position: relative;
-}
-
-.ripple-effect {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  border-radius: 100%;
-  pointer-events: none;
-  opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
 }
 
 .taskbar {
@@ -131,6 +128,22 @@ body {
 
 .radio input[type="radio"] + .radio-label:empty:before {
   margin-right: 0;
+}
+
+.ripple-element {
+  overflow: hidden;
+  position: relative;
+}
+
+.ripple-effect {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 100%;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .is-show-green {
