@@ -96,6 +96,24 @@ body {
   padding: 8px;
 }
 
+// form
+
+.search-form {
+  input {
+    background: #666;
+    border: 1px solid #868686;
+    border-radius: 25px;
+    padding: 0 12px;
+    color: #c1c1c1;
+    &::placeholder {
+      color: #c1c1c1;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
 // radio button
 
 .radio {
