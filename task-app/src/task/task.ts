@@ -6,6 +6,11 @@ import {
 import UIComponents from '../components/UI/UIComponents';
 import StorageFunc from './storage';
 
+interface searchEvent {
+  isSearch: boolean,
+  event: Event | null,
+}
+
 class Task {
 
   private storage: StorageFunc;
@@ -31,9 +36,6 @@ class Task {
 
     window.onload = () => {
       this.getItemListIn(idAttr.tasks);
-      if(localStorage.length === 0) {
-        idAttr.tasks.innerHTML = messages.noTask;
-      }
     }
 
     idAttr.tasks.addEventListener('click', e => {
@@ -42,6 +44,11 @@ class Task {
 
     (querySelector.ripple as HTMLElement).addEventListener('mousedown', e => {
       this.components.ripple(e);
+    });
+
+    idAttr.searchForm.addEventListener('input', e => {
+      idAttr.tasks.innerHTML = '';
+      this.getItemListIn(idAttr.tasks, {isSearch: true, event: e});
     });
   }
 
@@ -52,23 +59,31 @@ class Task {
 
   createTaskList(task: string) {
     if (task.length) {
-      if (localStorage.length === 0) {
-        idAttr.tasks.innerHTML = '';
-      }
       const html = this.taskTemplate(task);
-
       this.storage.save(task, html);
       this.clearInForm(task);
       this.storage.count();
+
+      this.storage.noMatchMsg(idAttr.tasks);
     }
   }
 
-  getItemListIn(tasks: HTMLElement): void {
+  getItemListIn(tasks: HTMLElement, search: searchEvent = {isSearch: false, event: null}): void {
     for (let key in localStorage) {
       const html: string | null = localStorage.getItem(key);
-      if (html) {
+      if (html && !search.isSearch && !search.event) {
         tasks.innerHTML += localStorage.getItem(key);
-        console.log(html);
+        this.storage.noMatchMsg(idAttr.tasks, messages.noTask);
+      }
+
+      if(html && search.isSearch && search.event) {
+        idAttr.searchForm.onsubmit = () => {
+          return false;
+        }
+        const searchValue = (search.event.target as HTMLInputElement).value;
+        if(key.includes(searchValue)) {
+          tasks.innerHTML += localStorage.getItem(key);
+        }
       }
     }
     this.storage.count();

@@ -7,6 +7,8 @@ export const idAttr = {
   low: document.getElementById('priority-low')!,
   medium: document.getElementById('priority-medium')!,
   high: document.getElementById('priority-high')!,
+  searchForm: document.getElementById('search-form')!,
+  search: document.getElementById('search')!,
 };
 
 export const querySelector = {

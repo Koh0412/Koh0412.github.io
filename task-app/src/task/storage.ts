@@ -24,6 +24,12 @@ export default class StorageFunc {
     idAttr.taskCount.innerText = `${localStorage.length}`;
   }
 
+  noMatchMsg(element: HTMLElement, message: string = '') {
+    if (localStorage.length === 0) {
+      element.innerHTML = message;
+    }
+  }
+
   remove(event: MouseEvent): void {
     const value = event.target as HTMLInputElement;
     const parent = value.parentElement as HTMLInputElement;
@@ -33,9 +39,7 @@ export default class StorageFunc {
       const task = (parent.textContent as string).trim();
       localStorage.removeItem(task);
 
-      if(localStorage.length === 0) {
-        idAttr.tasks.innerHTML = messages.noTask;
-      }
+      this.noMatchMsg(idAttr.tasks, messages.noTask);
     }
     this.count();
   }
