@@ -9,10 +9,16 @@
 </head>
 <body>
   <header>
-    <nav>Dracula</nav>
+    <nav class="dr-navbar">
+      <h2 class="logo"><a href="/dracula">Dracula</a></h2>
+      <ul class="dr-nav-item-list">
+        <li class="items"><a href="#">Download</a></li>
+      </ul>
+    </nav>
   </header>
-  <a href="./resources/download/dracula-win32-x64.zip" download="dracula-win32-x64.zip">
-    <span>ダウンロード(今はwinのみ)</span>
-  </a>
+  <div class="dr-container">
+    <button class="dc-btn" id="dc-btn">Download For </button>
+    <div id="not-support-user"></div>
+  </div>
 </body>
 </html>

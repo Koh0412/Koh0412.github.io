@@ -1,1 +1,43 @@
-/* No CSS *//*# sourceMappingURL=app.css.map */
+body {
+  margin: 0;
+  font-family: "Lato", Arial, sans-serif;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+.dr-navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.7rem 1rem;
+  background-color: #3f1e63;
+  color: #e8e4eb;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.dr-navbar * {
+  color: #e8e4eb;
+  text-decoration: none;
+}
+
+.dr-navbar .logo, .dr-navbar .dr-nav-item-list {
+  margin: 0;
+}
+
+.dr-navbar .dr-nav-item-list {
+  list-style: none;
+}
+
+.dr-container {
+  padding: 1.2rem 1rem;
+}
+/*# sourceMappingURL=app.css.map */
