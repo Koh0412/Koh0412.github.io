@@ -51,13 +51,6 @@ button:not(:disabled) {
   margin-right: .5rem;
 }
 
-.dr-navbar .logo::after {
-  content: "";
-  width: 15px;
-  height: 15px;
-  background-image: url("../images/dr.svg");
-}
-
 .dr-container {
   padding: 1.2rem 1rem;
 }
