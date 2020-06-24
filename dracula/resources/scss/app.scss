@@ -9,6 +9,14 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
 .dr-navbar {
   display: flex;
   justify-content: space-between;
@@ -30,8 +38,31 @@ button:not(:disabled) {
   .dr-nav-item-list {
     list-style: none;
   }
+
+  .logo {
+    margin-right: .5rem;
+    &::after {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background-image: url("../images/dr.svg");
+    }
+  }
 }
 
 .dr-container {
   padding: 1.2rem 1rem;
+
+  .dc-btn {
+    background: transparent;
+    border: 1px solid $color-bg-download-btn;
+    color: $color-bg-download-btn;
+    padding: .5rem .75rem;
+    border-radius: 1rem;
+    transition: .2s ease-in;
+    &:hover {
+      color: white;
+      background: $color-bg-download-btn;
+    }
+  }
 }

@@ -6,18 +6,26 @@
   <title>Dracula</title>
   <link rel="stylesheet" href="./resources/scss/app.css">
   <script src="./resources/js/app.js" defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 </head>
 <body>
   <header>
     <nav class="dr-navbar">
-      <h2 class="logo"><a href="/dracula">Dracula</a></h2>
+      <div class="d-flex">
+        <h2 class="logo"><a href="/dracula">Dracula</a></h2>
+        <object class="dr-svg-obj" data="./resources/images/dr.svg" type="image/svg+xml" width="30" height="30">
+        </object>
+      </div>
       <ul class="dr-nav-item-list">
         <li class="items"><a href="#">Download</a></li>
       </ul>
     </nav>
   </header>
   <div class="dr-container">
-    <button class="dc-btn" id="dc-btn">Download For </button>
+    <h3 class="text-center">Dracula is a little rich free text editor.</h3>
+    <div class="text-center">
+      <button class="dc-btn" id="dc-btn">Download For </button>
+    </div>
     <div id="not-support-user"></div>
   </div>
 </body>

@@ -7,6 +7,16 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .dr-navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,7 +47,33 @@ button:not(:disabled) {
   list-style: none;
 }
 
+.dr-navbar .logo {
+  margin-right: .5rem;
+}
+
+.dr-navbar .logo::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-image: url("../images/dr.svg");
+}
+
 .dr-container {
   padding: 1.2rem 1rem;
+}
+
+.dr-container .dc-btn {
+  background: transparent;
+  border: 1px solid #5a2991;
+  color: #5a2991;
+  padding: .5rem .75rem;
+  border-radius: 1rem;
+  -webkit-transition: .2s ease-in;
+  transition: .2s ease-in;
+}
+
+.dr-container .dc-btn:hover {
+  color: white;
+  background: #5a2991;
 }
 /*# sourceMappingURL=app.css.map */

@@ -1,4 +1,3 @@
-import config from "../package.json";
 
 const downloadBtn = document.getElementById("dc-btn") as HTMLButtonElement;
 const platform = navigator.platform;
@@ -15,6 +14,12 @@ function isWindows(): boolean {
 
 if (isWindows()) {
   downloadBtn.innerHTML += platformName.WINDOWS
+
+  const winIcon = document.createElement("i");
+  winIcon.style.marginLeft = "4px";
+  winIcon.classList.add("fab", "fa-windows");
+  downloadBtn.appendChild(winIcon);
+
 } else {
   const notSupport = document.getElementById("not-support-user")!;
   notSupport.innerHTML = "未対応もしくは、対応不可能な端末です。"
