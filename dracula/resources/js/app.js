@@ -91,9 +91,10 @@
   !*** ./src/app.ts ***!
   \********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("const downloadBtn = document.getElementById(\"dc-btn\");\r\nconst platform = navigator.platform;\r\nconst platformName = {\r\n    WINDOWS: \"windows\",\r\n    MAC: \"mac\",\r\n    LINUX: \"linux\"\r\n};\r\nfunction isWindows() {\r\n    return platform.indexOf(\"Win\") >= 0;\r\n}\r\nif (isWindows()) {\r\n    downloadBtn.innerHTML += platformName.WINDOWS;\r\n    const winIcon = document.createElement(\"i\");\r\n    winIcon.style.marginLeft = \"4px\";\r\n    winIcon.classList.add(\"fab\", \"fa-windows\");\r\n    downloadBtn.appendChild(winIcon);\r\n}\r\nelse {\r\n    const notSupport = document.getElementById(\"not-support-user\");\r\n    notSupport.innerHTML = \"未対応もしくは、対応不可能な端末です。\";\r\n    downloadBtn.disabled = true;\r\n}\r\ndownloadBtn.addEventListener(\"click\", (e) => {\r\n    const link = document.createElement(\"a\");\r\n    link.download = \"dracula-win32-x64.zip\";\r\n    link.href = \"./resources/download/dracula-win32-x64.zip\";\r\n    link.click();\r\n});\r\n\n\n//# sourceURL=webpack:///./src/app.ts?");
+"use strict";
+eval("\r\nconst downloadBtn = document.getElementById(\"dc-btn\");\r\nconst platform = navigator.platform;\r\nconst platformName = {\r\n    WINDOWS: \"windows\",\r\n    MAC: \"mac\",\r\n    LINUX: \"linux\"\r\n};\r\nfunction isWindows() {\r\n    return platform.indexOf(\"Win\") >= 0;\r\n}\r\nif (isWindows()) {\r\n    downloadBtn.innerHTML += platformName.WINDOWS;\r\n    const winIcon = document.createElement(\"i\");\r\n    winIcon.style.marginLeft = \"4px\";\r\n    winIcon.classList.add(\"fab\", \"fa-windows\");\r\n    downloadBtn.appendChild(winIcon);\r\n}\r\nelse {\r\n    const notSupport = document.getElementById(\"not-support-user\");\r\n    notSupport.innerHTML = \"未対応もしくは、対応不可能な端末です。\";\r\n    downloadBtn.disabled = true;\r\n}\r\ndownloadBtn.addEventListener(\"click\", (e) => {\r\n    const link = document.createElement(\"a\");\r\n    link.download = \"dracula-win32-x64.zip\";\r\n    link.href = \"./resources/download/dracula-win32-x64.zip\";\r\n    link.click();\r\n});\r\n\n\n//# sourceURL=webpack:///./src/app.ts?");
 
 /***/ })
 

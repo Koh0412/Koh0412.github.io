@@ -70,10 +70,15 @@ button:not(:disabled) {
   border-radius: 1rem;
   -webkit-transition: .2s ease-in;
   transition: .2s ease-in;
+  margin-bottom: 0.5rem;
 }
 
-.dr-container .dc-btn:hover {
+.dr-container .dc-btn:hover:not(:disabled) {
   color: white;
   background: #5a2991;
+}
+
+.dr-container .dc-btn:disabled {
+  opacity: 0.5;
 }
 /*# sourceMappingURL=app.css.map */

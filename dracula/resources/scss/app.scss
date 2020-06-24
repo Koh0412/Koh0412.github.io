@@ -60,9 +60,14 @@ button:not(:disabled) {
     padding: .5rem .75rem;
     border-radius: 1rem;
     transition: .2s ease-in;
-    &:hover {
+    margin-bottom: 0.5rem;
+    &:hover:not(:disabled) {
       color: white;
       background: $color-bg-download-btn;
+    }
+
+    &:disabled {
+      opacity: 0.5;
     }
   }
 }
