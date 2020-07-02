@@ -74,4 +74,27 @@ button:not(:disabled) {
 .dr-container .dc-btn:disabled {
   opacity: 0.5;
 }
+
+.dr-container .img-figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem 0;
+}
+
+.dr-container .img-figure img {
+  width: 80%;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+  .dr-container .img-figure img {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=app.css.map */
