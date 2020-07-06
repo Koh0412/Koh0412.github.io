@@ -75,6 +75,10 @@ button:not(:disabled) {
   opacity: 0.5;
 }
 
+.dr-container .dc-btn:focus {
+  outline: none;
+}
+
 .dr-container .img-figure {
   display: -webkit-box;
   display: -ms-flexbox;
