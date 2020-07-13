@@ -1,4 +1,8 @@
-import Task from './task/task';
+import "reflect-metadata";
+import { Task } from './api/task';
 
-const task = Task();
-task.app();
+function boot() {
+  Task.createApplication();
+}
+
+boot();

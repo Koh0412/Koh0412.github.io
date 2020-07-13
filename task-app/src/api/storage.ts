@@ -1,32 +1,17 @@
 import { UseText } from '../utils/use_text';
-import {
-  idAttr,
-  messages,
-} from '../utils/html_related';
+import { idAttr } from '../utils/html_related';
 
-export default class StorageFunc {
+export class Storage {
 
-  constructor() {}
+  get count(): string {
+    return localStorage.length.toLocaleString();
+  }
 
   clear(): void {
     const confirm = window.confirm(UseText.allClear);
     if (confirm) {
       localStorage.clear();
-      this.count();
-
-      idAttr.tasks.innerHTML = messages.noTask;
-    } else {
-      return;
-    }
-  }
-
-  count() {
-    idAttr.taskCount.innerText = `${localStorage.length}`;
-  }
-
-  noMatchMsg(element: HTMLElement, message: string = '') {
-    if (localStorage.length === 0) {
-      element.innerHTML = message;
+      idAttr.taskCount.textContent = localStorage.length.toLocaleString();
     }
   }
 
@@ -38,10 +23,8 @@ export default class StorageFunc {
       parent.parentElement!.remove();
       const task = (parent.textContent as string).trim();
       localStorage.removeItem(task);
-
-      this.noMatchMsg(idAttr.tasks, messages.noTask);
     }
-    this.count();
+    idAttr.taskCount.textContent = this.count;
   }
 
   save(task: string, html: string): void {
@@ -49,6 +32,5 @@ export default class StorageFunc {
       localStorage.setItem(task, html);
       return;
     }
-    return;
   }
 }

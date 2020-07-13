@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "reflect-metadata": "^0.1.13",
     "ts-loader": "6.2.1",
     "ts-node": "8.5.2",
+    "tsyringe": "^4.3.0",
     "typescript": "3.7.2",
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10"

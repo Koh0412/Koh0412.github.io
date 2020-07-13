@@ -1,6 +1,6 @@
 type Pos = { [P in 'x' | 'y' | 'width' | 'height']: number };
 
-export default class UIComponents {
+export class DOMUtil {
   constructor() {}
 
   convertInput(Element: HTMLElement): HTMLInputElement {
@@ -46,5 +46,6 @@ export default class UIComponents {
       }, 750);
     }
   }
-
 }
+
+export const domUtil = new DOMUtil();
