@@ -12,6 +12,7 @@ export class Storage {
     if (confirm) {
       localStorage.clear();
       idAttr.taskCount.textContent = localStorage.length.toLocaleString();
+      idAttr.tasks.innerHTML = "";
     }
   }
 
