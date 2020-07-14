@@ -4,6 +4,7 @@ import { EventName } from "../constants/event.constants";
 import { injectable } from "tsyringe";
 import { Storage } from "../services/storage";
 
+/** ヘッダーのコンポネント */
 @injectable()
 export class Header {
   private settingIcon: HTMLElement = domUtil.getElement("setting");

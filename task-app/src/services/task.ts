@@ -1,24 +1,14 @@
-import { container, injectable } from "tsyringe";
+import { injectable } from "tsyringe";
 
 import { idAttr, messages } from '../utils/html_related';
 import { domUtil } from '../utils/domUtil';
 import { Storage } from './storage';
-import { eventEmitter } from "../utils/events";
-import { EventName } from "../constants/event.constants";
 
 // TODO: リファクタリングする
 @injectable()
 export class Task {
 
-  constructor(private readonly storage: Storage) {
-    eventEmitter.on(EventName.SEARCH_INPUT, (e: Event) => {
-      idAttr.tasks.innerHTML = "";
-      const value = (e.target as HTMLInputElement).value;
-
-      this.searchTask(value);
-      idAttr.taskCount.textContent = this.storage.count;
-    });
-  }
+  constructor(private readonly storage: Storage) {}
 
   get priority(): number {
     const low: HTMLInputElement = domUtil.getElement("priority-low");
@@ -26,22 +16,15 @@ export class Task {
     const high: HTMLInputElement = domUtil.getElement("priority-high");
 
     if (low.checked) {
-      return Number(low.value);
+      return parseInt(low.value, 10);
     }
     if (medium.checked) {
-      return Number(medium.value);
+      return parseInt(medium.value, 10);
     }
     if (high.checked) {
-      return Number(high.value);
+      return parseInt(high.value, 10);
     }
     return 0;
-  }
-
-  /**
-   * アプリケーションの作成
-   */
-  static createApplication() {
-    return container.resolve(Task);
   }
 
   /**
@@ -54,22 +37,6 @@ export class Task {
       this.storage.save(task, html);
       idAttr.taskCount.textContent = this.storage.count;
       idAttr.tasks.innerHTML += html;
-    }
-  }
-
-  /**
-   * valueでタスクの検索を行う
-   * @param value
-   */
-  searchTask(value: string): void {
-    for (let key in localStorage) {
-      const html: string | null = localStorage.getItem(key);
-
-      if(html) {
-        if(key.includes(value)) {
-          idAttr.tasks.innerHTML += html
-        }
-      }
     }
   }
 
