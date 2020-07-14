@@ -1,13 +1,6 @@
 type Pos = { [P in 'x' | 'y' | 'width' | 'height']: number };
 
 export class DOMUtil {
-  constructor() {}
-
-  convertInput(Element: HTMLElement): HTMLInputElement {
-    const el = Element as HTMLInputElement;
-    return el;
-  }
-
   /**
    * id属性の要素の取得
    * @param id
@@ -37,7 +30,7 @@ export class DOMUtil {
     }
   }
 
-  ripple(event: MouseEvent) {
+  applyRipple(event: MouseEvent) {
     const effect = document.querySelector('.ripple-effect') as HTMLElement;
     const ripplePos: Pos = {
       x: event.offsetX,

@@ -1,4 +1,4 @@
-import { UseText } from '../utils/use_text';
+import { ConfirmMessage } from '../constants/message.constants';
 import { idAttr } from '../utils/html_related';
 
 export class Storage {
@@ -8,7 +8,7 @@ export class Storage {
   }
 
   clear(): void {
-    const confirm = window.confirm(UseText.allClear);
+    const confirm = window.confirm(ConfirmMessage.ALL_CLEAR);
     if (confirm) {
       localStorage.clear();
       idAttr.taskCount.textContent = localStorage.length.toLocaleString();

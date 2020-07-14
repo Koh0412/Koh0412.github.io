@@ -4,16 +4,9 @@ export const idAttr = {
   taskAdd: document.getElementById('task-add')!,
   form: document.getElementById('form')!,
   taskCount: document.getElementById('task-count')!,
-  low: document.getElementById('priority-low')!,
-  medium: document.getElementById('priority-medium')!,
-  high: document.getElementById('priority-high')!,
   searchForm: document.getElementById('search-form')!,
   search: document.getElementById('search')!,
 };
-
-export const querySelector = {
-  ripple: document.querySelector('.ripple-element')!,
-}
 
 export const messages = {
   noTask: '<div class="alert alert-info">現在タスクはありません</div>',

@@ -1,53 +1,29 @@
 import { container, injectable } from "tsyringe";
 
-import { idAttr, querySelector, messages } from '../utils/html_related';
+import { idAttr, messages } from '../utils/html_related';
 import { domUtil } from '../utils/domUtil';
 import { Storage } from './storage';
 import { eventEmitter } from "../utils/events";
-import { EventName } from "../constants/eventConstants";
-
-interface searchEvent {
-  isSearch: boolean,
-  event: Event | null,
-}
+import { EventName } from "../constants/event.constants";
 
 // TODO: リファクタリングする
 @injectable()
 export class Task {
 
-  private priorityArray: Array<number> = [];
-
   constructor(private readonly storage: Storage) {
-
-    idAttr.form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const submitedTask: string = this.registeredValue.trim();
-      this.createTaskList(submitedTask);
-    });
-
-    idAttr.setting.addEventListener('click', this.storage.clear.bind(this));
-    idAttr.tasks.addEventListener('click', (e) => this.storage.remove(e));
-
-    this.getItemListIn(idAttr.tasks);
-
-
-    (querySelector.ripple as HTMLElement).addEventListener('mousedown', (e) => domUtil.ripple(e));
-
     eventEmitter.on(EventName.SEARCH_INPUT, (e: Event) => {
       idAttr.tasks.innerHTML = "";
-      this.getItemListIn(idAttr.tasks, {isSearch: true, event: e});
-    });
-  }
+      const value = (e.target as HTMLInputElement).value;
 
-  get registeredValue(): string {
-    let text = domUtil.convertInput(idAttr.taskAdd).value;
-    return text;
+      this.searchTask(value);
+      idAttr.taskCount.textContent = this.storage.count;
+    });
   }
 
   get priority(): number {
-    const low = domUtil.convertInput(idAttr.low);
-    const medium = domUtil.convertInput(idAttr.medium);
-    const high = domUtil.convertInput(idAttr.high);
+    const low: HTMLInputElement = domUtil.getElement("priority-low");
+    const medium: HTMLInputElement = domUtil.getElement("priority-medium");
+    const high: HTMLInputElement = domUtil.getElement("priority-high");
 
     if (low.checked) {
       return Number(low.value);
@@ -68,42 +44,33 @@ export class Task {
     return container.resolve(Task);
   }
 
-  clearInForm(task: string): void {
-    idAttr.tasks.innerHTML += this.taskTemplate(task);
-    domUtil.convertInput(idAttr.taskAdd).value = '';
-  }
-
   /**
    * タスクの作成
    * @param task
    */
-  createTaskList(task: string) {
+  create(task: string) {
     if (task.length) {
       const html = this.taskTemplate(task);
       this.storage.save(task, html);
-      this.clearInForm(task);
       idAttr.taskCount.textContent = this.storage.count;
+      idAttr.tasks.innerHTML += html;
     }
   }
 
-  getItemListIn(tasks: HTMLElement, search: searchEvent = {isSearch: false, event: null}): void {
+  /**
+   * valueでタスクの検索を行う
+   * @param value
+   */
+  searchTask(value: string): void {
     for (let key in localStorage) {
       const html: string | null = localStorage.getItem(key);
-      if (html && !search.isSearch && !search.event) {
-        tasks.innerHTML += localStorage.getItem(key);
-      }
 
-      if(html && search.isSearch && search.event) {
-        idAttr.searchForm.onsubmit = () => {
-          return false;
-        }
-        const searchValue = (search.event.target as HTMLInputElement).value;
-        if(key.includes(searchValue)) {
-          tasks.innerHTML += localStorage.getItem(key);
+      if(html) {
+        if(key.includes(value)) {
+          idAttr.tasks.innerHTML += html
         }
       }
     }
-    idAttr.taskCount.textContent = this.storage.count;
   }
 
   getPriorityStr(priorityNumber: number): string {
