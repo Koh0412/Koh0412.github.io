@@ -3,6 +3,8 @@ import { container, injectable } from "tsyringe";
 import { idAttr, querySelector, messages } from '../utils/html_related';
 import { domUtil } from '../utils/domUtil';
 import { Storage } from './storage';
+import { eventEmitter } from "../utils/events";
+import { EventName } from "../constants/eventConstants";
 
 interface searchEvent {
   isSearch: boolean,
@@ -31,8 +33,8 @@ export class Task {
 
     (querySelector.ripple as HTMLElement).addEventListener('mousedown', (e) => domUtil.ripple(e));
 
-    idAttr.searchForm.addEventListener('input', e => {
-      idAttr.tasks.innerHTML = '';
+    eventEmitter.on(EventName.SEARCH_INPUT, (e: Event) => {
+      idAttr.tasks.innerHTML = "";
       this.getItemListIn(idAttr.tasks, {isSearch: true, event: e});
     });
   }

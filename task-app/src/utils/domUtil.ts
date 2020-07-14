@@ -8,6 +8,18 @@ export class DOMUtil {
     return el;
   }
 
+  /**
+   * id属性の要素の取得
+   * @param id
+   */
+  getElement<T>(id: string): T {
+    const el = document.getElementById(id) as unknown as T;
+    if (!el) {
+      console.error(`element: ${id} is not exist.`);
+    }
+    return el;
+  }
+
   cardColorClassName(priorityNumber: number): string {
     switch (priorityNumber) {
       case 1:

@@ -2,12 +2,12 @@ const path = require('path');
 module.exports = {
   mode: "development",
   // devtool: 'inline-source-map',
-  entry: './src/app.ts',
+  entry: './src/index.ts',
   watchOptions: {
     ignored: /node_modules/
   },
   output: {
-    filename: 'app.js',
+    filename: 'index.js',
     path: path.join(__dirname, './build/src'),
   },
   resolve: {
