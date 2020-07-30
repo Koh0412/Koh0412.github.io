@@ -2,24 +2,18 @@
 $github-color: #353535;
 $qiita-color: #55c500;
 $twitter-color: #55acee;
-$header-color: #22ec73;
+$color-white: #fefffb;
 
 /* tag */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('../img/antique-grain.jpg');
   color: #333;
-}
-
-header {
-  position: sticky;
-  top: 0;
 }
 
 /* shared */
 
-.header-nav, .main-container, .footer {
+.header-nav, .footer {
   text-align: center;
 }
 
@@ -27,31 +21,48 @@ header {
 
 .header-nav {
   padding: 10px;
-  background: $header-color;
   opacity: 0.9;
   box-shadow: 0px 3px 3px 0px rgba(0,0,0,.2);
+  background: #ffffff14;
   a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: $color-white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: lighter;
+    &:hover {
+      color: $color-white;
+      text-decoration: none;
+    }
   }
 }
 
 /* main */
-.main-container {
-  padding: 12px 16px;
-  background: #fefffb;
-  margin: 18px;
+.card-container {
+  padding: 1rem;
+  background: $color-white;
+  margin: 1rem 0;
   border-radius: 5px;
   box-shadow: 0px 0px 5px 2px rgba(0,0,0,.3);
 }
 
 .my-image {
   margin: 8px;
-  background: #d3f9ff;
+  border: 1px solid lightgray;
+  padding: 4px;
   border-radius: 100%;;
+}
+
+.bg-image {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .social {
@@ -61,8 +72,14 @@ header {
   }
 }
 
-.title {
-  margin: 0;
+/* footer */
+
+.footer {
+  padding: 10px;
+  background: #2a2f35;
+  small {
+    color: white;
+  }
 }
 
 // fontawesome
@@ -80,12 +97,7 @@ header {
   color: $twitter-color;
 }
 
-/* footer */
-
-.footer {
-  padding: 10px;
-  background: #2a2f35;
-  small {
-    color: white;
-  }
+/* 汎用 */
+.color-white {
+  color: $color-white;
 }
