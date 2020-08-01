@@ -95,4 +95,29 @@ body {
 .color-white {
   color: #fefffb;
 }
+
+.data-label {
+  display: inline-block;
+  background: gray;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+.data-label.label-orange {
+  background: #d49a4f;
+}
+
+.data-label.label-bluegreen {
+  background: #43d47d;
+}
+
+.data-label.label-midnight-blue {
+  background: #4f4dde;
+}
+
+.data-label.label-red {
+  background: #dc4d4d;
+}
 /*# sourceMappingURL=webpage.css.map */

@@ -1,8 +1,13 @@
 /* variable */
-$github-color: #353535;
-$qiita-color: #55c500;
-$twitter-color: #55acee;
-$color-white: #fefffb;
+$color-github: #353535;
+$color-qiita: #55c500;
+$color-twitter: #55acee;
+$color-text-white: #fefffb;
+
+$color-label-red: #dc4d4d;
+$color-label-orange: #d49a4f;
+$color-label-bluegreen: #43d47d;
+$color-label-midnight-blue: #4f4dde;
 
 /* tag */
 body {
@@ -27,11 +32,11 @@ body {
   a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: $color-white;
+    color: $color-text-white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: lighter;
     &:hover {
-      color: $color-white;
+      color: $color-text-white;
       text-decoration: none;
     }
   }
@@ -40,7 +45,7 @@ body {
 /* main */
 .card-container {
   padding: 1rem;
-  background: $color-white;
+  background: $color-text-white;
   margin: 1rem 0;
   border-radius: 5px;
   box-shadow: 0px 0px 5px 2px rgba(0,0,0,.3);
@@ -85,19 +90,44 @@ body {
 // fontawesome
 
 .fa-github {
-  color: $github-color;
+  color: $color-github;
 }
 
 .fa-search {
-  background: $qiita-color;
+  background: $color-qiita;
   color: white;
 }
 
 .fa-twitter {
-  color: $twitter-color;
+  color: $color-twitter;
 }
 
 /* 汎用 */
 .color-white {
-  color: $color-white;
+  color: $color-text-white;
+}
+
+.data-label {
+  display: inline-block;
+  background: gray;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 8px;
+
+  &.label-orange {
+    background: $color-label-orange;
+  }
+
+  &.label-bluegreen {
+    background: $color-label-bluegreen;
+  }
+
+  &.label-midnight-blue {
+    background: $color-label-midnight-blue;
+  }
+
+  &.label-red {
+    background: $color-label-red;
+  }
 }
