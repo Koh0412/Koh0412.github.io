@@ -1,5 +1,5 @@
 # This is My Sites
-- [my web page](https://koh0412.github.io/web)
+- [my web page](https://koh0412.github.io/web/mypage.html)
 - [voice test page](https://koh0412.github.io/voicetest)
 - [task app(typescript)](https://koh0412.github.io/task-app)
 
