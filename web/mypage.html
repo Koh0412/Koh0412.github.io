@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自己紹介シート</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="resources/scss/webpage.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="resources/js/webpage.js" defer></script>
+</head>
+
+<body>
+    <figure class="bg-image">
+        <img src="./resources/img/antique-grain.jpg" alt="">
+    </figure>
+    <header>
+        <nav class="header-nav">
+            <a href="/web">自己紹介シート</a>
+        </nav>
+    </header>
+    <main class="container my-2">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="color-white">My Profile</h2>
+                <div class="card-container">
+                    <section>
+                        <img src="resources/img/habocado.jpg" alt="myimage" width="100" height="100" class="my-image">
+                        <p>名前: Koh</p>
+                        <p>年齢: 24</p>
+                        <p>趣味: プログラミング, ゲーム, 野球観戦(Denaファン), 音楽(洋楽も邦楽も), 料理, etc...</p>
+                    </section>
+                </div>
+                <h2 class="color-white">Skills</h2>
+                <div class="card-container">
+                    <section>
+                        <span class="data-label label-orange">言語</span>
+                        <p>学習歴: 1年10ヵ月</p>
+                        <div>
+                            <p>Ruby: 半年ほど, フレーム: Ruby on Rails, Sinatra</p>
+                            <p>C#(Unity): ４ヶ月, ゲームを２個ほど</p>
+                            <p>TypeScript: 1年ほど</p>
+                            <p>PHP: 8ヵ月ほど, フレーム: Laravel, 自作フレームワーク</p>
+                            <p>その他: Go, Kotlin, Elixir, etc...</p>
+                        </div>
+                        <span class="data-label label-bluegreen">業務経験: 半年, 2件</span>
+                        <div>
+                            <p>サーバー: Java × spring, フロント: TypeScript × Vue</p>
+                            <p>サーバー: PHP × Laravel, フロント: </p>
+                        </div>
+                        <span class="data-label label-red">Database</span>
+                        <div>
+                            <p>MySQL, SQLite</p>
+                        </div>
+                        <span class="data-label label-midnight-blue">Infrastructure</span>
+                        <div>
+                            <p>AWS, Virtual Box, docker (どれもちょろっと触った程度)</p>
+                        </div>
+                        <span class="data-label">Others</span>
+                        <div>
+                            <p>Git, heroku</p>
+                        </div>
+                    </section>
+                </div>
+                <h2 class="color-white">Comment</h2>
+                <div class="card-container">
+                    <section>
+                        <p>最近はよくTypescriptやPHPを触っています。技術力はまだまだですがバックエンドもフロントエンドも好きです。</p>
+                    </section>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2 class="color-white">SNS</h2>
+                <div class="card-container twitter-list">
+                    <a class="twitter-timeline" href="https://twitter.com/Koh04l2xPg?ref_src=twsrc%5Etfw">Tweets by
+                        Koh04l2xPg
+                    </a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <h2 class="color-white">Other Link</h2>
+                <div class="card-container">
+                    <div>
+                        <a href="/task-app">task-app</a>
+                    </div>
+                    <div>
+                        <a href="/voicetest">音声テスト</a>
+                    </div>
+                    <!-- <div>
+              <a href="/dracula/">Dracula Text Editor</a>
+            </div> -->
+                </div>
+            </div>
+            <div class="d-none d-md-block col-md-12">
+                <h2 class="color-white">Github Contributions</h2>
+                <img class="card-container" src="https://grass-graph.moshimo.works/images/Koh0412.png">
+            </div>
+            <div class="col-md-12">
+                <h2 class="color-white">Social Link</h2>
+                <section class="social">
+                    <a href="https://twitter.com/Koh04l2xPg"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="https://github.com/Koh0412"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="https://qiita.com/Koh515"><i class="fas fa-search fa-2x"></i></a>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <small>&copy; 2019 Koh All rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
