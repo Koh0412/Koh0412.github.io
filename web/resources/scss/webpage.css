@@ -1,128 +1,114 @@
-@charset "UTF-8";
-/* variable */
-/* tag */
 body {
+  background: url("../img/haikei.jpg");
+  font-size: 14px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
 }
 
-/* shared */
-.header-nav, .footer {
+.container {
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+}
+
+header .marquee-container {
+  padding: .5em 0;
+  overflow: hidden;
+  background: url("../img/mori.jpg");
+  font-style: italic;
+}
+
+header .marquee-container .marquee {
+  display: inline-block;
+  padding-left: 100%;
+  white-space: nowrap;
+  -webkit-animation: marquee 10s linear infinite;
+          animation: marquee 10s linear infinite;
+  color: red;
+}
+
+main {
   text-align: center;
 }
 
-/* header */
-.header-nav {
-  padding: 10px;
-  opacity: 0.9;
-  -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
-  background: #ffffff14;
+main .welcome-message {
+  background-color: pink;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.header-nav a {
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: #fefffb;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: lighter;
+footer {
+  text-align: center;
 }
 
-.header-nav a:hover {
-  color: #fefffb;
-  text-decoration: none;
+.mywindow {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  min-width: 200px;
 }
 
-/* main */
-.card-container {
-  padding: 1rem;
-  background: #fefffb;
-  margin: 1rem 0;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+.mywindow .mywindow-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.my-image {
-  margin: 8px;
-  border: 1px solid lightgray;
-  padding: 4px;
-  border-radius: 100%;
+.mywindow .mywindow-body .message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.bg-image {
-  position: fixed;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
+.mywindow .mywindow-body .btn-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.bg-image img {
-  width: 100%;
-  height: 100%;
+@-webkit-keyframes marquee {
+  from {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  to {
+    -webkit-transform: translate(-100%);
+            transform: translate(-100%);
+  }
 }
 
-.social a {
-  padding: 0 8px;
-  display: inline-block;
+@keyframes marquee {
+  from {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  to {
+    -webkit-transform: translate(-100%);
+            transform: translate(-100%);
+  }
 }
 
-.twitter-list {
-  height: 500px;
-  overflow: auto;
+@media screen and (max-width: 768px) {
+  .container {
+    width: auto;
+    margin: 6px;
+  }
+  .marquee-container .marquee {
+    margin: 0;
+    font-size: 24px;
+  }
 }
-
-/* footer */
-.footer {
-  padding: 10px;
-  background: #2a2f35;
-}
-
-.footer small {
-  color: white;
-}
-
-.fa-github {
-  color: #353535;
-}
-
-.fa-search {
-  background: #55c500;
-  color: white;
-}
-
-.fa-twitter {
-  color: #55acee;
-}
-
-/* 汎用 */
-.color-white {
-  color: #fefffb;
-}
-
-.data-label {
-  display: inline-block;
-  background: gray;
-  color: white;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  margin-bottom: 8px;
-}
-
-.data-label.label-orange {
-  background: #d49a4f;
-}
-
-.data-label.label-bluegreen {
-  background: #43d47d;
-}
-
-.data-label.label-midnight-blue {
-  background: #4f4dde;
-}
-
-.data-label.label-red {
-  background: #dc4d4d;
-}
-/*# sourceMappingURL=webpage.css.map */
